@@ -1,0 +1,127 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Fjalla One', sans-serif;
+  background: #121212;
+  cursor: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 25px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.cursor {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+.cursor--large {
+  --size: 40px;
+  border: 1px solid #ff3c3c;
+}
+.cursor--small {
+  --size: 10px;
+  background: #ff3c3c;
+  transform: translate(-50%, -50%);
+}
+
+.about {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  list-style: none;
+}
+.item a {
+  --size: 60px;
+  border: none;
+  min-width: var(--size);
+  min-height: var(--size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition: background 200ms ease, color 200ms ease;
+  cursor: none;
+}
+.about:hover a {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgb(100, 100, 100);
+}
+.about:hover a:hover {
+  color: #fff;
+}
+
+#before-after {
+  position: relative;
+  width: 600px;
+  height: 900px;
+  border: 2px solid grey;
+  margin: 50px auto 0px;
+}
+
+.view {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.view-before {
+  z-index: 100;
+}
+
+.view-after {
+  z-index: 200;
+}
+
+#dragme {
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: black;
+  cursor: none !important;
+  z-index: 999 !important;
+}
